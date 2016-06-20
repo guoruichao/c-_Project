@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{553B89BD-3431-409E-AC4A-21B1F96FEE99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>libCommon</RootNamespace>
+    <AssemblyName>libCommon</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseServer.cs" />
+    <Compile Include="BJson\BJSON.cs" />
+    <Compile Include="BJson\BJsonParser.cs" />
+    <Compile Include="BJson\BJsonSerializer.cs" />
+    <Compile Include="BJson\Getters.cs" />
+    <Compile Include="BJson\Reflection.cs" />
+    <Compile Include="BJson\SafeDictionary.cs" />
+    <Compile Include="DelayEvent.cs" />
+    <Compile Include="enMessageType.cs" />
+    <Compile Include="Gzip\CRC32.cs" />
+    <Compile Include="Gzip\Deflate.cs" />
+    <Compile Include="Gzip\DeflateStream.cs" />
+    <Compile Include="Gzip\GZipStream.cs" />
+    <Compile Include="Gzip\Inflate.cs" />
+    <Compile Include="Gzip\InfTree.cs" />
+    <Compile Include="Gzip\Tree.cs" />
+    <Compile Include="Gzip\Zlib.cs" />
+    <Compile Include="Gzip\ZlibBaseStream.cs" />
+    <Compile Include="Gzip\ZlibCodec.cs" />
+    <Compile Include="Gzip\ZlibConstants.cs" />
+    <Compile Include="Gzip\ZlibStream.cs" />
+    <Compile Include="MD5Helper.cs" />
+    <Compile Include="MyTimeOut.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtoDataDefine.cs" />
+    <Compile Include="SingleInst.cs" />
+    <Compile Include="CommTrace.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
